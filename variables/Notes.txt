@@ -1,0 +1,26 @@
+1) Notepad
+===========
+2) NOtepad++
+3) Editplus
+4) Eclipse
+5) Intellij
+================
+Online Editor  : ideone.com
+=================
+Variables:
+
+int x=20;
+int maths=20;
+int maths marks =30;   not accepted
+int %marks=35;  not accepted
+int   do=44;  not accepted
+
+Rules:
+1) Alpha, Underscore(_) Ex:   Maths, _runs
+2) No SPace is allowed:    
+3) 64 characters max length
+4) No Special Characters
+5) No Keywords :  return, if while do for int char float
+===========================================
+int 
+
