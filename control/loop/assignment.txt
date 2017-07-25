@@ -1,0 +1,4 @@
+// print 1 to 10 Except 5 
+// print 10 to 1 only even numbers
+// print summation of min to max of even numbers
+// print factorial of max value; 
