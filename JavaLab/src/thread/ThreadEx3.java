@@ -18,3 +18,5 @@ public class ThreadEx3 {
 	}
 
 }
+// If we are not extending Thread class , our Implementation class cannot be threated as thread obj.
+// we externally create thread class object and we pass that object to implementation class obj so that we can execute run method.
