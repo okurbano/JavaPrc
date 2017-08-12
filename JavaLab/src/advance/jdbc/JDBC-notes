@@ -1,0 +1,31 @@
+1) For connection  :
+connect 
+Enter User name :   admin/root/system
+Enter Password :     admin/root/tiger
+
+2) to check tables inside the database :
+select * from tab ;
+
+3) to Check the current Database Name :
+
+select * from global_name :
+
+4) To check what is there inside the table;
+select * from table_name ;
+Ex:   select * from USER_PASS;
+
+5) To create table :
+create table tablename (col1name   type, col2name type);
+Ex:  create table book (bookname varchar(25), bookauthor  varchar(30), bookprice int);
+
+6) To check schema of table
+desc tablename;
+
+7) TO insert a record (row)
+insert into tablename values('col1' ,'col2,col3);
+Ex: insert into book values('Java','james',100);
+
+
+
+
+
