@@ -9,6 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/Form2")
@@ -27,9 +28,12 @@ public class Form2 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String name=request.getParameter("txt1");
-		
+		/*
 		Cookie ck = new Cookie("uname",name);
 		response.addCookie(ck);
+		*/
+		HttpSession session=request.getSession();
+		session.setAttribute("uname",name);
 		
 		out.println("<html><body bgcolor=green>");
 		out.println("<form action=Form3>");
