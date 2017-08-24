@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -44,6 +45,9 @@ public class First extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		String formUid=request.getParameter("uid");
 		String formpwd=request.getParameter("pwd");
+		PreparedStatement pst = null;
+		ResultSet rs=null;
+		 boolean status=false; 
 		System.out.println("Name ="+formUid);
 		try{
 		Class.forName(Helpers.DRIVER);
@@ -52,27 +56,26 @@ public class First extends HttpServlet {
 		Connection conn=DriverManager.getConnection(Helpers.URL,Helpers.USERNAME,Helpers.PASSWORD);
 		System.out.println("Connecttion Success");
 		
-		Statement st=conn.createStatement();
+		String query="select * from appsusers where username=? and password=?";
 		
-		ResultSet rs=st.executeQuery("select * from appsusers");
-		while(rs.next())
-		{
-			String name=rs.getString(1);
-			String pass=rs.getString(2);
-			System.out.println(" "+name+"  "+pass);
-		}
-		
-		
-		
+        pst = conn.prepareStatement(query);
+        pst.setString(1, formUid);
+        pst.setString(2,formpwd);
+        rs=pst.executeQuery();
+      
+        while(rs.next()){
+        	status=true;
+        	
+        }    
+			
 		}
 		catch(Exception e)
 		{
 		System.out.println(e);	
 		}
 		
-		/*
 		
-		if(uname.equalsIgnoreCase(formUid) && password.equals(formpwd))
+		if(status)
 		{
 			RequestDispatcher rd = request.getRequestDispatcher("success");
 			rd.forward(request, response);
@@ -82,7 +85,7 @@ public class First extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("error");
 			rd.include(request, response);
 		}
-			*/	
+		
 		
 		
 	}

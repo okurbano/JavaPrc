@@ -19,6 +19,10 @@ public class ErrorServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest reqq, HttpServletResponse ress) throws ServletException, IOException {
+		
+	}
+
+	protected void doPost(HttpServletRequest reqq, HttpServletResponse ress) throws ServletException, IOException {
 		ress.setContentType("text/html");
 		PrintWriter out=ress.getWriter();
 		
@@ -26,10 +30,6 @@ public class ErrorServlet extends HttpServlet {
 		out.print("<html><body bgcolor=red>");
 		out.print("<h1>"+name+"</h1>");
 		out.print("</body></html>");
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
 
 }
